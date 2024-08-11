@@ -1,7 +1,7 @@
 import Login from "../components/Login";
 import Reset from "../components/Reset";
 
-export const Root = () => {
+const Root = () => {
   return (
     <div>
       <Login />
@@ -9,3 +9,5 @@ export const Root = () => {
     </div>
   );
 };
+
+export default Root;
