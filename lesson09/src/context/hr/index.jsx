@@ -5,6 +5,8 @@ export const HrContext = createContext();
 
 export const HrProvider = (props) => {
   return (
-    <HrContext.Provider value={"webrain"}>{props.children}</HrContext.Provider>
+    <HrContext.Provider value={"HR webrain"}>
+      {props.children}
+    </HrContext.Provider>
   );
 };
