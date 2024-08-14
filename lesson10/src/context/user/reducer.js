@@ -1,6 +1,6 @@
 import { students } from "../../mock/students";
 
-export const initialState = students;
+export const InitialState = students;
 
 export const reducer = (state, action) => {
   switch (action.type) {

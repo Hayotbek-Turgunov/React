@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 
 import { UserContext } from "../../context/user";
-import { useContext } from "react";
 
 export const Table = () => {
-  const [data, dispatch] = useContext(UserContext);
+  const [data, dispatch] = UserContext();
   console.log(data);
 
   const onDelete = (id) => {
-    let res = data.filter((val) => val.id !== id);
+    let res = data.filter((item) => item.id !== id);
     dispatch({ type: "delete", payload: res });
   };
 

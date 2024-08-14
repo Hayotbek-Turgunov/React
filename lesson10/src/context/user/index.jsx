@@ -1,17 +1,16 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
-import { createContext } from "react";
-import { useReducer } from "react";
-import { initialState } from "./reducer";
-export const UserContext = createContext();
-import { reducer } from "./reducer";
+import { createContext, useContext, useReducer } from "react";
+import { students } from "../../mock/students";
+import { InitialState, reducer } from "./reducer";
+
+export const Context = createContext();
+export const UserContext = () => useContext(Context);
 
 export const UserProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, InitialState);
 
   return (
-    <UserContext.Provider value={[state, dispatch]}>
+    <Context.Provider value={[state, dispatch]}>
       {props.children}
-    </UserContext.Provider>
+    </Context.Provider>
   );
 };
